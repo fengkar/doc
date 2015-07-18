@@ -80,7 +80,7 @@
  - :s#vivian/#sky/# 替换当前行第一个 vivian/ 为 sky/ 
  - :%s+/oradata/apras/+/user01/apras1+ （使用+ 来 替换 / ）： /oradata/apras/替换成/user01/apras1/ 
 
-##### 3. 删除文本中的^M 
+ ##### 3. 删除文本中的 
  - 问题描述：对于换行，window下用回车换行（0A0D）来表示，linux下是回车（0A）来表示。这样，将window上的文件拷到unix上用时，总会有个^M，请写个用在unix下的过滤windows文件的换行符（0D）的shell或c程序。 
  - 使用命令：cat filename1 | tr -d “^V^M” > newfile; 
  - 使用命令：sed -e “s/^V^M//” filename > outputfilename 
