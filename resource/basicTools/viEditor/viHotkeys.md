@@ -1,3 +1,5 @@
+![vm快捷键见](vi-vim-cheat-sheet.png)
+
 #### 打开或新建文件，并将光标置于第一行首
  - vi +n filename ：打开文件，并将光标置于第n行首
  - vi + filename ：打开文件，并将光标置于最后一行首
