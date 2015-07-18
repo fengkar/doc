@@ -1,9 +1,10 @@
-#### filename :打开或新建文件，并将光标置于第一行首
+#### 打开或新建文件，并将光标置于第一行首
  - vi +n filename ：打开文件，并将光标置于第n行首
  - vi + filename ：打开文件，并将光标置于最后一行首
  - vi +/pattern filename：打开文件，并将光标置于第一个与pattern匹配的串处
  - vi -r filename ：在上次正用vi编辑时发生系统崩溃，恢复filename
  - vi filename….filename ：打开多个文件，依次进行编辑
+
 #### 移动光标类命令
  - h ：光标左移一个字符
  - l ：光标右移一个字符
@@ -28,12 +29,14 @@
  - L ：光标移至屏幕最后行
  - 0：（注意是数字零）光标移至当前行首
  - $：光标移至当前行尾
+
  #### 屏幕翻滚类命令
  - Ctrl+u：向文件首翻半屏
  - Ctrl+d：向文件尾翻半屏
  - Ctrl+f：向文件尾翻一屏
  - Ctrl＋b；向文件首翻一屏
  - nz：将第n行滚至屏幕顶部，不指定n时将当前行滚至屏幕顶部。
+
  #### 插入文本类命令
  - i ：在光标前
  - I ：在当前行首
@@ -54,6 +57,7 @@
  - ndd：删除当前行及其后n-1行
  - x或X：删除一个字符，x删除光标后的，而X删除光标前的
  - Ctrl+u：删除输入方式下所输入的文本
+
  #### 搜索及替换命令
  - /pattern：从光标开始处向文件尾搜索pattern
  - ?pattern：从光标开始处向文件首搜索pattern
@@ -62,6 +66,7 @@
  - ：s/p1/p2/g：将当前行中所有p1均用p2替代
  - ：n1,n2s/p1/p2/g：将第n1至n2行中所有p1均用p2替代
  - ：g/p1/s//p2/g：将文件中所有p1均用p2替换
+
  ##### 1. 基本的替换 
  - :s/vivian/sky/ 替换当前行第一个 vivian 为 sky 
  - :s/vivian/sky/g 替换当前行所有 vivian 为 sky 
@@ -70,9 +75,11 @@
  - （n 为数字，若 n 为 .，表示从当前行开始到最后一行） 
  - :%s/vivian/sky/（等同于 :g/vivian/s//sky/） 替换每一行的第一个 vivian 为 sky 
  - :%s/vivian/sky/g（等同于 :g/vivian/s//sky/g） 替换每一行中所有 vivian 为 sky 
+
  ##### 2. 可以使用 # 作为分隔符，此时中间出现的 / 不会作为分隔符 
  - :s#vivian/#sky/# 替换当前行第一个 vivian/ 为 sky/ 
  - :%s+/oradata/apras/+/user01/apras1+ （使用+ 来 替换 / ）： /oradata/apras/替换成/user01/apras1/ 
+
 ##### 3. 删除文本中的^M 
  - 问题描述：对于换行，window下用回车换行（0A0D）来表示，linux下是回车（0A）来表示。这样，将window上的文件拷到unix上用时，总会有个^M，请写个用在unix下的过滤windows文件的换行符（0D）的shell或c程序。 
  - 使用命令：cat filename1 | tr -d “^V^M” > newfile; 
@@ -85,6 +92,7 @@
  - tr -d “\r” < src >dest 
  - tr -d “\015″ dest 
  - strings A>B 
+
 #### 选项设置
  - all：列出所有选项设置情况
  - term：设置终端类型
@@ -97,6 +105,7 @@
  - nomagic：允许在搜索模式中，使用前面不带“\”的特殊字符
  - nowrapscan：禁止vi在搜索到达文件两端时，又从另一端开始
  - mesg：允许vi显示其他用户用write写到自己终端上的信息
+
 #### 后行方式命令
  - ：n1,n2 co n3：将n1行到n2行之间的内容拷贝到第n3行下
  - ：n1,n2 m n3：将n1行到n2行之间的内容移至到第n3行下
@@ -109,6 +118,7 @@
  - ：!command：执行shell命令command
  - ：n1,n2 w!command：将文件中n1行至n2行的内容作为command的输入并执行之，若不指定n1，n2，则表示将整个文件内容作为command的输入
  - ：r!command：将命令command的输出结果放到当前行
+
 #### 寄存器操作
  - “?nyy：将当前行及其下n行的内容保存到寄存器？中，其中?为一个字母，n为一个数字
  - “?nyw：将当前行及其下n个字保存到寄存器？中，其中?为一个字母，n为一个数字
