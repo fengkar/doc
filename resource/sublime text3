@@ -1,0 +1,27 @@
+一、文本出现中文乱码问题
+http://blog.csdn.net/china_chenxing/article/details/18841641
+ 
+二、tab中文出现方块问题：
+
+在sublime text 3中，Preference, Settings-User，添加：
+写道
+"dpi_scale": 1.0,
+ 
+我的Settings-User配置：
+写道
+{
+"dpi_scale": 1.0,
+"font_face": "Consolas",
+"font_size": 17,
+"ignored_packages":
+[
+"Vintage"
+],
+"line_padding_bottom": 1,
+"line_padding_top": 1,
+"tab_size": 4,
+"translate_tabs_to_spaces": true,
+"word_wrap": "true"
+}
+ 
+--end
