@@ -1,3 +1,14 @@
+#### svn
+svn update -r 200 test.php
+svn log path
+svn info path
+svn diff -r 200:201 test.php
+svn merge -r 200:205 test.php
+svn resolved PATH…
+
+svn mkdir http://localhost:81/svn/seurat/branches/prototype -m "create prototype directory"
+svn copy http://localhost:81/svn/seurat/trunk/seurat-project http://localhost:81/svn/seurat/branches/prototype -m "create new branch for prototype"
+svn import ~/projects/hello/ file:///home/aaronwong/.subversion/repos/hello/ -m "initial improt"
 
 #### process start time
 ps -p PID -o lstart
